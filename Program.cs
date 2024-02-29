@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace Euler11
         static void Main(string[] args)
         {
             int[,] SuperArray;
-            
+
             SuperArray = FeldEinlesen();
 
             int produktmaximum, berechnet;
@@ -34,7 +34,7 @@ namespace Euler11
                         }
 
                     }
-                        // Vertikal
+                    // Vertikal
                     if (y + 3 < 20)
                     {
                         berechnet = SuperArray[x, y] * SuperArray[x, y + 1] * SuperArray[x, y + 2] * SuperArray[x, y + 3];
@@ -45,7 +45,7 @@ namespace Euler11
                     }
 
                     // Diagonal unten Rechts
-                    if(x + 3 < 20 && y + 3 < 20)
+                    if (x + 3 < 20 && y + 3 < 20)
                     {
                         berechnet = SuperArray[x, y] * SuperArray[x + 1, y + 1] * SuperArray[x + 2, y + 2] * SuperArray[x + 3, y + 3];
                         if (berechnet > produktmaximum)
@@ -54,10 +54,10 @@ namespace Euler11
                         }
                     }
 
-                    // Diagonal unten llinks
+                    // Diagonal unten links
                     if (x + 3 < 20 && y >= 3)
                     {
-                        berechnet = SuperArray[x, y] * SuperArray[x + 1, y + 1] * SuperArray[x + 2, y + 2] * SuperArray[x + 3, y + 3];
+                        berechnet = SuperArray[x, y] * SuperArray[x + 1, y - 1] * SuperArray[x + 2, y - 2] * SuperArray[x + 3, y - 3];
                         if (berechnet > produktmaximum)
                         {
                             produktmaximum = berechnet;
@@ -67,6 +67,8 @@ namespace Euler11
             }
 
             //FeldAusgeben(SuperArray);
+
+            Console.WriteLine(produktmaximum);
 
             Console.ReadKey();
         }
