@@ -44,7 +44,7 @@ namespace Euler11
                         }
                     }
 
-                    // Diagonal unten Rechts
+                    // Diagonal oben Rechts
                     if (x + 3 < 20 && y + 3 < 20)
                     {
                         berechnet = SuperArray[x, y] * SuperArray[x + 1, y + 1] * SuperArray[x + 2, y + 2] * SuperArray[x + 3, y + 3];
@@ -54,7 +54,7 @@ namespace Euler11
                         }
                     }
 
-                    // Diagonal unten links
+                    // Diagonal unten Rechts
                     if (x + 3 < 20 && y >= 3)
                     {
                         berechnet = SuperArray[x, y] * SuperArray[x + 1, y - 1] * SuperArray[x + 2, y - 2] * SuperArray[x + 3, y - 3];
